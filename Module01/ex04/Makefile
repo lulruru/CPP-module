@@ -1,6 +1,6 @@
-NAME = human
+NAME = searchAndReplace
 
-SRC		= 
+SRC		= main.cpp ft_replace.cpp
 
 
 CC 		= c++
@@ -18,7 +18,8 @@ all: $(NAME) $(OBJS)
 		$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@rm -rf *.replace
 
 fclean: clean
 
