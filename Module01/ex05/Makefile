@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/22 23:02:48 by russelenc         #+#    #+#              #
-#    Updated: 2023/10/22 23:02:49 by russelenc        ###   ########.fr        #
+#    Created: 2023/10/22 23:02:21 by russelenc         #+#    #+#              #
+#    Updated: 2023/10/23 00:24:13 by russelenc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = harl
 
-SRC		= megaphone.cpp
+SRC		= Harl.cpp main.cpp
+
 
 CC 		= c++
 
