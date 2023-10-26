@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/26 16:11:11 by russelenc         #+#    #+#              #
-#    Updated: 2023/10/26 16:11:47 by russelenc        ###   ########.fr        #
+#    Created: 2023/10/26 16:15:03 by russelenc         #+#    #+#              #
+#    Updated: 2023/10/26 16:15:22 by russelenc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
+NAME = harl
 
-SRC		= Fixed.cpp main.cpp
+SRC		= Harl.cpp main.cpp
 
 CC 		= c++
 

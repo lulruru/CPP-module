@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 17:51:50 by russelenc         #+#    #+#             */
-/*   Updated: 2023/10/26 16:04:02 by russelenc        ###   ########.fr       */
+/*   Created: 2023/10/26 16:15:00 by russelenc         #+#    #+#             */
+/*   Updated: 2023/10/26 16:16:29 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "Fixed.hpp"
 
-#include <iostream>
-#include <string.h>
-
-class Fixed{
-private:
-	int _fixedPointValue;
-	static const int _fractionalBits= 8;
-public:
-	Fixed();
-	~Fixed();
-	Fixed(const Fixed& original);
-	Fixed& operator = (const Fixed& original);
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
-};
-#endif
+int main( void ) {
+	Fixed a;
+	a.setRawBits(8);
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	b.setRawBits(6);
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}
