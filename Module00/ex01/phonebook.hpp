@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:51:37 by russelenc         #+#    #+#             */
-/*   Updated: 2023/10/16 16:51:28 by russelenc        ###   ########.fr       */
+/*   Updated: 2023/11/14 16:00:46 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <string>
 #include <cstring>
 #include <iomanip>
+#include <sstream>
 
 #define MAX 8
 

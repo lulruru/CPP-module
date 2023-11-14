@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:43:10 by russelenc         #+#    #+#             */
-/*   Updated: 2023/10/16 20:40:58 by russelenc        ###   ########.fr       */
+/*   Updated: 2023/11/14 16:04:56 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,9 @@ void Phonebook::search()
 		menu();
         return;
     }
-	int input = -1;
-    if (std::all_of(str.begin(), str.end(), ::isdigit)) {
-        input = std::stoi(str);
-    } else {
-        std::cout << "Saisie invalide. Veuillez entrer un nombre entier." << std::endl;
-    }
+	std::stringstream degree(str);
+	int input = 0;
+	degree >> input;
 	if(input > 7)
 	{
 		std::cout << "Erreur de saisie, contact inexistant" << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:57:47 by russelenc         #+#    #+#             */
-/*   Updated: 2023/10/16 16:39:50 by russelenc        ###   ########.fr       */
+/*   Updated: 2023/11/14 15:51:31 by rencarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ std::string Contact::get_non_empty_info(const std::string& content) {
 		if (!getline(std::cin, input)){
             if (std::cin.eof()) {
                 std::cin.clear();
-				exit(0);
+				_exit(0);
             }
 		}
         if (input.empty()) {
@@ -72,7 +72,7 @@ std::string Contact::get_numeric_info(const std::string& content) {
         if (!getline(std::cin, input)){
             if (std::cin.eof()) {
                 std::cin.clear();
-				exit(0);
+				_exit(0);
             }
 		}
         for (std::string::size_type i = 0; i < input.size(); i++) {
