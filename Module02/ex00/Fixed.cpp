@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:35:11 by russelenc         #+#    #+#             */
-/*   Updated: 2023/10/26 16:10:09 by russelenc        ###   ########.fr       */
+/*   Updated: 2024/01/12 14:58:43 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::Fixed(const Fixed& original) : _fixedPointValue(original._fixedPointValue
 Fixed& Fixed::operator=(const Fixed& original){
 	if(this != &original)
 	{
-		this->_fixedPointValue = original._fixedPointValue;
+		this->_fixedPointValue = original.getRawBits();
 	}
 	return *this;
 }

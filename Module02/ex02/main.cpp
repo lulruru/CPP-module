@@ -5,24 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 16:15:00 by russelenc         #+#    #+#             */
-/*   Updated: 2024/01/12 16:52:24 by russelenc        ###   ########.fr       */
+/*   Created: 2024/01/13 07:09:00 by russelenc         #+#    #+#             */
+/*   Updated: 2024/01/13 07:19:33 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void ) {
+int	main( void ) { 
 	Fixed a;
-	Fixed const b( 10 ); Fixed const c( 42.42f ); Fixed const d( b );
-	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed c(15);
+	Fixed d(3);
+	
+	std::cout << a << std::endl;
+	// std::cout << ++a << std::endl;
+	Fixed e(++a);
+	std::cout << e << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c + d << std::endl;
+	std::cout << c - d << std::endl;
+	std::cout << c / d << std::endl;
+	std::cout << c * d << std::endl;
+	std::cout << Fixed::min(c, d) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0; 
 }
