@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 07:40:30 by russelenc         #+#    #+#             */
-/*   Updated: 2024/01/13 09:24:50 by russelenc        ###   ########.fr       */
+/*   Updated: 2024/01/13 09:33:12 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 
 ClapTrap::ClapTrap(){
-	std::cout << "Constructor Called" << std::endl;
+	std::cout << "ClapTrap Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &og){
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
 	*this = og;
 }
 
@@ -35,10 +35,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &og){
 }
 
 ClapTrap::ClapTrap(const std::string& name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0){
-	std::cout << "Constructor Called" << std::endl;
+	std::cout << "ClapTrap Constructor Called" << std::endl;
 };
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor Called" << std::endl;
+	std::cout << "ClapTrap Destructor Called" << std::endl;
 }
 
 //ClapTrap <name> attacks <target>, causing <damage> points of damage!
