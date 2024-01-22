@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/26 16:11:11 by russelenc         #+#    #+#              #
-#    Updated: 2024/01/19 13:07:31 by russelenc        ###   ########.fr        #
+#    Created: 2024/01/21 18:00:52 by russelenc         #+#    #+#              #
+#    Updated: 2024/01/21 18:08:37 by russelenc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
+NAME = polymorphisme
 
-SRC		= ScavTrap.cpp ClapTrap.cpp main.cpp
+SRC		= Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
 
 CC 		= c++
 

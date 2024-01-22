@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 08:55:56 by russelenc         #+#    #+#             */
-/*   Updated: 2024/01/19 13:44:07 by russelenc        ###   ########.fr       */
+/*   Updated: 2024/01/13 09:33:29 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 ScavTrap::ScavTrap() : ClapTrap(){
 	std::cout << "ScaveTrap Constructor Called" << std::endl;
-	this->_name = "ScavTrap";
-	this->_hitPoint = 100;
-	this->_energyPoint = 50;
-	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &og) : ClapTrap(og){

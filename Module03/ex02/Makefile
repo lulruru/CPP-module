@@ -6,13 +6,13 @@
 #    By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 16:11:11 by russelenc         #+#    #+#              #
-#    Updated: 2024/01/19 13:07:31 by russelenc        ###   ########.fr        #
+#    Updated: 2024/01/19 13:51:05 by russelenc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Fixed
 
-SRC		= ScavTrap.cpp ClapTrap.cpp main.cpp
+SRC		= ScavTrap.cpp ClapTrap.cpp main.cpp FragTrap.cpp
 
 CC 		= c++
 

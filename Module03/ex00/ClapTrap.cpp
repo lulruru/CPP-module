@@ -6,15 +6,14 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 07:40:30 by russelenc         #+#    #+#             */
-/*   Updated: 2024/01/13 09:24:50 by russelenc        ###   ########.fr       */
+/*   Updated: 2024/01/19 13:43:22 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-
-ClapTrap::ClapTrap(){
-	std::cout << "Constructor Called" << std::endl;
+ClapTrap::ClapTrap() : _name("ClapTrap"), _hitPoint(10), _energyPoint(10), _attackDamage(0){
+	std::cout << "ClapTrap Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &og){
