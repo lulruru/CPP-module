@@ -6,13 +6,13 @@
 #    By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:00:52 by russelenc         #+#    #+#              #
-#    Updated: 2024/01/31 13:21:21 by russelenc        ###   ########.fr        #
+#    Updated: 2024/01/31 14:04:56 by russelenc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = polymorphisme
 
-SRC		= Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRC		= Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp Brain.cpp 
 
 CC 		= c++
 
