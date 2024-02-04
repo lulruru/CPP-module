@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 21:18:06 by russelenc         #+#    #+#             */
-/*   Updated: 2024/02/04 19:57:53 by russelenc        ###   ########.fr       */
+/*   Updated: 2024/02/04 20:23:47 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,9 @@ const char*	AForm::GradeTooHighException::what() const throw(){
 const char*	AForm::GradeTooLowException::what() const throw(){
 	return ("Grade is too low");
 }
-
-void AForm::execute(Bureaucrat const &bureaucrat){
-
+const char*	AForm::FormNotSigned::what() const throw(){
+	return ("Form is not Signed");
 }
-
 //surcharge d'operateur output
 std::ostream&	operator<<(std::ostream& o, AForm const& form){
 	o << "Forms's name : " << form.getName() << std::endl;

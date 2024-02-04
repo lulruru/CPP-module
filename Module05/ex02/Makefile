@@ -6,7 +6,7 @@
 #    By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 18:07:27 by russelenc         #+#    #+#              #
-#    Updated: 2024/02/04 19:17:38 by russelenc        ###   ########.fr        #
+#    Updated: 2024/02/04 21:04:42 by russelenc        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,13 @@ SRC			:= 	main.cpp \
 				Bureaucrat.cpp \
 				AForm.cpp \
 				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
 
 OBJ_DIR 	:= ./objs/
 C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
 OBJ			:=$(SRC:.cpp=.o)
 OBJ			:=$(addprefix $(OBJ_DIR), $(OBJ))
-
+_SHRUBERRY := test_shrubbery test2_shrubbery 
 DEPS		:=$(OBJ:.o=.d)
 
 ###########################################################
@@ -44,6 +45,7 @@ debug: re
 
 clean:
 	rm -rf $(OBJ_DIR)
+	rm -rf $(_SHRUBERRY)
 
 fclean: clean
 	rm -rf $(NAME)

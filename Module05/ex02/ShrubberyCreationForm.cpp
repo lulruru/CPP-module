@@ -11,7 +11,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs) {
     *this = rhs;
 }
-void ShrubberyCreationForm::printTree(){
+void ShrubberyCreationForm::printTree() const{
 	std::ofstream o;
 	o.open((_target + "_shrubbery").c_str());
 	o <<"	                                                         ." << std::endl
@@ -44,16 +44,19 @@ void ShrubberyCreationForm::printTree(){
 	<<"                          ...;%@@@@@%%:;;;;,..    " << std::endl;
 };
 
-void ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat){
-	if(bureaucrat.getGrade() <= this->getExecGrade() && this->getState())
+void ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const{
+ 	if(bureaucrat.getGrade() <= this->getExecGrade() && this->getState())
 		printTree();
-	else
+	else if(bureaucrat.getGrade() > this->getExecGrade())
 		throw GradeTooLowException();
+	else
+		throw FormNotSigned();
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs) {
     if (this != &rhs) {
 		this->_target = rhs._target;
+		
     }
     return *this;
 }

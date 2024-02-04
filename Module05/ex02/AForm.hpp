@@ -6,7 +6,7 @@
 /*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 21:18:07 by russelenc         #+#    #+#             */
-/*   Updated: 2024/02/04 20:08:02 by russelenc        ###   ########.fr       */
+/*   Updated: 2024/02/04 20:41:31 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
 
 class Bureaucrat;
 
@@ -42,6 +43,9 @@ class AForm {
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception{
+		virtual const char *what() const throw();
+	};
+	class FormNotSigned : public std::exception{
 		virtual const char *what() const throw();
 	};
 };
