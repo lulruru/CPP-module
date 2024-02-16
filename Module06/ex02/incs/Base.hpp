@@ -14,24 +14,17 @@
 
 #include <iostream>
 #include <string>
-#include "colors.hpp"
 
 class Base
 {
 	public:
-
-	// Constructeurs & Destructeurs
-    Base();
-    Base(Base const &src);
-    ~Base();
-
-	// Surcharge d'opérateurs
-    Base& operator=(Base const &rhs);
-
-	// Getters & Setters
-	
-	// Méthodes
-	
-	private:
+    virtual ~Base(){};
 };
 
+class A : virtual public Base {};
+class B : virtual public Base {};
+class C : virtual public Base {};
+
+Base    *generate(void);
+void    identify(Base *p);
+void    identify(Base& p);

@@ -12,10 +12,22 @@
 
 #include "../incs/Base.hpp"
 
-int	main()
+int main()
 {
+    Base	*base1 = generate();
+	Base	*base2 = generate();
+	Base	*base3 = generate();
 
-	return (0);
+    identify(base1);
+	identify(base2);
+	identify(base3);
+	std::cout << "=================" << std::endl;
+    identify(*base1);
+	identify(*base2);
+	identify(*base3);
+    
+    delete base1;
+    delete base2;
+    delete base3;
 }
-
 
