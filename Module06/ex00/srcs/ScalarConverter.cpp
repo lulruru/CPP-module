@@ -17,10 +17,6 @@
 /* ************************************************************************** */
 
 bool ScalarConverter::_negative = false;
-bool ScalarConverter::_int_ov = false;
-bool ScalarConverter::_double_ov = false;
-bool ScalarConverter::_float_ov = false;
-bool ScalarConverter::_char_ov = false;
 int	ScalarConverter::_type = -1;
 
 ScalarConverter::ScalarConverter() {
@@ -68,7 +64,7 @@ void ScalarConverter::find_type(const std::string &str)
 	}
 	while(i < len)
 	{
-		if (str.at(i) == 'f' && std::isdigit(str.at(i - 1))
+		if (i != 0 && str.at(i) == 'f' && std::isdigit(str.at(i - 1))
 				&& ((i + 1) == len)) {
 				ScalarConverter::_type = _FLOAT;
 				return ;

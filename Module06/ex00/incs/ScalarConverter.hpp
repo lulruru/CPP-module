@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
+#include <stdlib.h>
 enum _TYPE{
 	_INT,
 	_CHAR,
@@ -23,25 +25,20 @@ enum _TYPE{
 	_INF,
 };
 
-
 class ScalarConverter {
 private:
     // Constructeurs & Destructeurs
     ScalarConverter();
 	static std::string _str;
     static int _type;
-	static bool _int_ov;
-	static bool _double_ov;
-	static bool _float_ov;
-	static bool _char_ov;
     static bool _negative;
     static void find_type(const std::string &str);
-     void print_char(std::string str);
-     void print_int(std::string str);
-     void print_float(std::string str);
-     void print_double(std::string str);
-     void print_nan(std::string str);
-     void print_inf(std::string str);
+    void print_char(std::string str);
+    void print_int(std::string str);
+    void print_float(std::string str);
+    void print_double(std::string str);
+    void print_nan(std::string str);
+    void print_inf(std::string str);
 
 public:
 	~ScalarConverter();

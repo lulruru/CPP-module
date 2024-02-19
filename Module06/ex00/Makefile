@@ -1,6 +1,6 @@
 NAME = ScalarConverter
 CC = c++
-CFLAGS = -Wall -Wextra -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 OBJ_DIR = objs/
 
 SRC = srcs/main.cpp srcs/ScalarConverter.cpp 
