@@ -14,8 +14,7 @@
 
 int	main()
 {
-	std::string	input;
-	
+	std::string input;
 	while (1)
 	{
 		std::cout << "Enter input: " ;

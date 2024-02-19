@@ -11,10 +11,12 @@
 /* ************************************************************************** */
 
 #pragma once
-
+#include <stdint.h>
 #include <iostream>
 #include <string>
-
+#include <time.h>
+#include <ctime>
+#include <cstdlib>
 class Base
 {
 	public:

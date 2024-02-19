@@ -16,7 +16,6 @@
 #include <string>
 #include "Data.hpp"
 #include <stdint.h>
-
 class Serialize
 {
 	public:

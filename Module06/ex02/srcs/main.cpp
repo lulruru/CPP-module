@@ -11,11 +11,14 @@
 /* ************************************************************************** */
 
 #include "../incs/Base.hpp"
+#include <unistd.h>
 
 int main()
 {
     Base	*base1 = generate();
+	sleep(1);
 	Base	*base2 = generate();
+	sleep(2);
 	Base	*base3 = generate();
 
     identify(base1);

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../incs/Base.hpp"
-
 Base *generate(void){
 
 	std::srand(static_cast<unsigned>(std::time(NULL)));
@@ -43,6 +42,7 @@ void    identify(Base *p)
 void    identify(Base& p)
 {
     Base check;
+
     try{
         check = dynamic_cast<A&>(p);
         std::cout << "Object is Type A" << std::endl;
@@ -51,7 +51,7 @@ void    identify(Base& p)
     catch (std::exception &e){
         (void)e;
     }
-    try{
+    try{        
         check = dynamic_cast<B&>(p);
         std::cout << "Object is Type B" << std::endl;
         return ;

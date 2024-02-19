@@ -29,7 +29,7 @@ class ScalarConverter {
 private:
     // Constructeurs & Destructeurs
     ScalarConverter();
-	static std::string _str;
+
     static int _type;
     static bool _negative;
     static void find_type(const std::string &str);
@@ -39,11 +39,11 @@ private:
     void print_double(std::string str);
     void print_nan(std::string str);
     void print_inf(std::string str);
+    typedef void (ScalarConverter::*t_funcptr)(std::string);
+    static t_funcptr ptr[];
 
 public:
 	~ScalarConverter();
-	typedef void (ScalarConverter::*t_funcptr)(std::string);
-    static t_funcptr ptr[];
     static void convert( std::string  str);
 
 };
