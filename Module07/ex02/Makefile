@@ -1,4 +1,4 @@
-NAME = 
+NAME = class
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = objs/
