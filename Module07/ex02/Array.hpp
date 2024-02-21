@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 20:18:28 by rencarna          #+#    #+#             */
-/*   Updated: 2024/02/20 19:43:57 by rencarna         ###   ########.fr       */
+/*   Updated: 2024/02/21 11:19:42 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Array
     ~Array();
 	// Surcharge d'opérateurs
     Array& operator=(Array const &rhs);
-	T& operator[](unsigned int i) const;
+	T& operator[](unsigned int i);
 	// Exception
 	class WrongIndex : public std::exception
 	{  
@@ -41,3 +41,4 @@ class Array
 };
 
 
+#include "Array.tpp"
