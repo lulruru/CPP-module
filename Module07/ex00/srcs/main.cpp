@@ -20,7 +20,8 @@ int main()
     std::cout << "min : " << min<int>(a,b) << std::endl;
     std::cout << "max : " << max<int>(a,b) << std::endl;
     std::cout << "a = " << a << " et b = " << b << std::endl;
-    swap<int>(a,b);
+    ::swap(a,b);
+    std::cout << "swaaap" << std::endl;
     std::cout << "a = " << a << " et b = " << b << std::endl;
     std::cout << "=======================" << std::endl;
     std::string c = "chaine1";
