@@ -33,6 +33,7 @@ MutantStack<T>::~MutantStack() {
 /* ************************************************************************** */
 /*                     Surcharges d'opérateurs                  		      */
 /* ************************************************************************** */
+
 template < typename T>
 MutantStack<T>&	MutantStack<T>::operator=(MutantStack<T> const &rhs) {
 	if (this != rhs)
