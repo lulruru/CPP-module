@@ -14,23 +14,21 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <map>
+#include <fstream>
+#include <exception>
+#include <string>
+#include <cctype>
 
-class BitcoinExchange
-{
-	public:
-
-	// Constructeurs & Destructeurs
+class BitcoinExchange {
+public:
     BitcoinExchange();
-    BitcoinExchange(BitcoinExchange const &src);
+    BitcoinExchange(const BitcoinExchange &src);
     ~BitcoinExchange();
+    BitcoinExchange& operator=(const BitcoinExchange &rhs);
 
-	// Surcharge d'opérateurs
-    BitcoinExchange& operator=(BitcoinExchange const &rhs);
-
-	// Getters & Setters
-	
-	// Méthodes
-	
-	private:
+private:
+	std::map<std::string, float> _value;
+	void fill_map();
 };
-

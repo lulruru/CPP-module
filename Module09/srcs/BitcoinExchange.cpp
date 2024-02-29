@@ -17,8 +17,7 @@
 /* ************************************************************************** */
 
 BitcoinExchange::BitcoinExchange() {
-
-	std::cout <<  "Default Constructor called: BitcoinExchange"  << std::endl;
+	fill_map()
 }
 
 
@@ -40,4 +39,10 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs) {
 	
 	std::cout <<  "Assignment Operator called: BitcoinExchange"  << std::endl;
 	return (*this);
+}
+
+void BitcoinExchange::fill_map(){
+	size_t pos;
+	std::ifstream("data.csv");
+	if()
 }
