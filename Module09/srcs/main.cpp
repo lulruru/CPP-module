@@ -48,13 +48,13 @@ bool estDigit2(const std::string& str) {
     return false; 
 }
 
-void check_value(std::string value, int i)
+void check_value(float value, int i)
 {
-	if(atof(value.c_str()) < 0)
+	if(value < 0)
 		throw std::runtime_error("negative number found at line : " + std::to_string(i));
-	else if(atof(value.c_str()) > 1000)
+	else if(value > 1000)
 		throw std::runtime_error("number too large found at line : " + std::to_string(i));
-	else if(estDigit(value))
+	else if(estDigit(std::to_string(value)))
 		throw std::runtime_error("non digit found at line : " + std::to_string(i));
 }
 
@@ -82,15 +82,15 @@ void check_date(std::string& value, int i)
 		throw std::runtime_error("non bisextile year too much days : " + value);
 }
 
-void check_all(std::ifstream &file)
+void check_all(std::ifstream &file, BitcoinExchange& btc)
 {
 	std::string line;
 	std::getline(file, line);
 	std::string date;
-	std::string value;
+	float value;
 	size_t		sep;
 	int i = 0;
-	// int err = 0;
+	float result;
 
 	if (line != "date | value")
 		throw std::runtime_error("Bad file header");
@@ -103,11 +103,13 @@ void check_all(std::ifstream &file)
 				sep = line.find("|");
 				if (sep != std::string::npos){
 					date = line.substr(0, sep - 1);
-					value = line.substr(sep + 2, std::string::npos);
+					value = atof(line.substr(sep + 2, std::string::npos).c_str());
 					check_value(value, i);
 					check_date(date, i);
-					std::cout << date << " ";
-					std::cout << value << std::endl;
+					// std::cout << date << '\''<< std::endl ;
+					// std::cout << value << std::endl;
+					result = btc.findClosestDate(date, value);
+					std::cout << result << std::endl;
 				}
 			}
 			else
@@ -127,11 +129,12 @@ int	main(int ac , char **av)
 	if(ac == 2)
 	{
 		try {
-        if (!file.is_open()) {
-            throw std::runtime_error("Failed to open \"" + std::string(av[1]) + "\"");
-        }
-		check_all(file);
-        file.close();
+			BitcoinExchange bitcoin;
+        	if (!file.is_open()) {
+        	    throw std::runtime_error("Failed to open \"" + std::string(av[1]) + "\"");
+        	}
+			check_all(file, bitcoin);
+        	file.close();
     	} catch (std::exception& e) {
         	std::cerr << "An error occurred : " << e.what() << std::endl;
   		}	

@@ -1,9 +1,9 @@
 NAME = btc
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS =  -std=c++98 -g3
 OBJ_DIR = objs/
 
-SRC =	srcs/main.cpp 
+SRC =	srcs/main.cpp srcs/BitcoinExchange.cpp
 OBJ = $(addprefix $(OBJ_DIR), $(notdir $(SRC:.cpp=.o)))
 
 TOTAL_FILES := $(words $(SRC))
