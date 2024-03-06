@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:57:25 by rencarna          #+#    #+#             */
-/*   Updated: 2024/03/04 14:57:25 by rencarna         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:16:21 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <stack>
+#include <string>
+#include <sstream>
+#include <cctype>
+#include <stdlib.h>
+#include <stdexcept>
 
 class RPN
 {
@@ -21,16 +28,12 @@ class RPN
 
 	// Constructeurs & Destructeurs
     RPN();
+	RPN(const std::string &str);
     RPN(RPN const &src);
     ~RPN();
-
-	// Surcharge d'opérateurs
     RPN& operator=(RPN const &rhs);
-
-	// Getters & Setters
-	
-	// Méthodes
-	
+	int evaluateRPN(const std::string& expression);
 	private:
+	// std::string _expression;
 };
 

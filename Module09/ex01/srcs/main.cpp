@@ -3,59 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rencarna <rencarna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: russelenc <russelenc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:57:25 by rencarna          #+#    #+#             */
-/*   Updated: 2024/03/04 15:28:57 by rencarna         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:16:46 by russelenc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/RPN.hpp"
-#include <iostream>
-#include <stack>
-#include <string>
-#include <sstream>
-#include <cctype>
-#include <stdlib.h>
 
-int evaluateRPN(const std::string& expression) {
-    std::istringstream iss(expression);
-    std::stack<int> stack;
-    std::string token;
+// int evaluateRPN(const std::string& expression) {
+//     std::istringstream iss(expression);
+//     std::stack<int> stack;
+//     std::string token;
 
-    while (iss >> token) {
-        if (isdigit(token[0]) || (token.size() > 1 && isdigit(token[1]))) {
-            stack.push(atoi(token.c_str()));
-        } else {
-            int operand2 = stack.top();
-            stack.pop();
-            int operand1 = stack.top();
-            stack.pop();
+//     while (iss >> token) {
+//         if (isdigit(token[0]) || (token.size() > 1 && isdigit(token[1]))) {
+//             stack.push(atoi(token.c_str()));
+//         } else {
+//             if (stack.size() < 2) {
+//                 throw std::invalid_argument("Pas assez d'opérandes pour l'opération.");
+//             }
 
-            if (token == "+")
-                stack.push(operand1 + operand2);
-            else if (token == "-")
-                stack.push(operand1 - operand2);
-            else if (token == "*")
-                stack.push(operand1 * operand2);
-            else if (token == "/")
-                stack.push(operand1 / operand2);
-        }
-    }
+//             int operand2 = stack.top();
+//             stack.pop();
+//             int operand1 = stack.top();
+//             stack.pop();
 
-    return stack.top();
-}
+//             if (token == "+")
+//                 stack.push(operand1 + operand2);
+//             else if (token == "-")
+//                 stack.push(operand1 - operand2);
+//             else if (token == "*")
+//                 stack.push(operand1 * operand2);
+//             else if (token == "/") {
+//                 if (operand2 == 0) {
+//                     throw std::invalid_argument("Division par zéro.");
+//                 }
+//                 stack.push(operand1 / operand2);
+//             } else {
+//                 throw std::invalid_argument("Opération inconnue.");
+//             }
+//         }
+//     }
+
+//     if (stack.size() != 1) {
+//         throw std::invalid_argument("Expression invalide.");
+//     }
+
+//     return stack.top();
+// }
 
 int main(int argc, char* argv[]) {
-	std::cout << argv[1][1] << std::endl;
-    if (argc != 2 || !isdigit(argv[1][0]) || argv[1][1] != 32 || argv[1][1]) {
+	// std::cout << argv[1][1] << std::endl;
+    if (argc != 2 || !isdigit(argv[1][0]) || argv[1][1] != 32) {
         std::cerr << "Usage: " << argv[0] << " <expression in RPN>" << std::endl;
         return 1;
     }
-
+	RPN rpn;
     std::string expression = argv[1];
-    int result = evaluateRPN(expression);
-    std::cout << "Result: " << result << std::endl;
-
+	try{
+    	int result = rpn.evaluateRPN(expression);
+	
+	std::cout << "Result: " << result << std::endl;
+	}catch (const std::invalid_argument& e) {
+        std::cerr << "Erreur : " << e.what() << std::endl;
+    }
     return 0;
 }
