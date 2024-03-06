@@ -12,9 +12,11 @@
 
 #include "../incs/PmergeMe.hpp"
 
-int	main()
+int	main(int ac, char **av)
 {
-
+	if(ac != 2){
+		std::cout << "Error : Bad argument" << std::endl;
+	}
 	return (0);
 }
 
