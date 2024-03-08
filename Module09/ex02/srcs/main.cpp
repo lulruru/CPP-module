@@ -12,12 +12,16 @@
 
 #include "../incs/PmergeMe.hpp"
 
-int	main(int ac, char **av)
-{
-	if(ac != 2){
-		std::cout << "Error : Bad argument" << std::endl;
-	}
-	return (0);
+int main(int ac, char **av) {
+
+	try{
+		if(ac < 2)
+			throw std::invalid_argument("./PmergeME <set of number>");
+		for(int i = 1; i < ac ; i++){
+			;
+		}
+	}catch(std::exception &e){
+		std::cout << "Error : " << e.what() << std::endl;
+ 	}
+    return 0;
 }
-
-

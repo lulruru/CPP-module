@@ -15,6 +15,8 @@
 #include <iostream>
 #include <string>
 #include "colors.hpp"
+#include <vector>
+#include <deque>
 
 class PmergeMe
 {
@@ -22,6 +24,7 @@ class PmergeMe
 
 	// Constructeurs & Destructeurs
     PmergeMe();
+	PmergeMe(int ac, char **av);
     PmergeMe(PmergeMe const &src);
     ~PmergeMe();
 
@@ -33,5 +36,9 @@ class PmergeMe
 	// Méthodes
 	
 	private:
+	std::vector<int> _argument;
+	std::vector<int> _vectorArg;
+	std::deque<int> _dequecont;
+	
 };
 

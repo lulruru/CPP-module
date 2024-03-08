@@ -21,6 +21,18 @@ PmergeMe::PmergeMe() {
 	std::cout <<  "Default Constructor called: PmergeMe"  << std::endl;
 }
 
+PmergeMe::PmergeMe(int ac,char **av) {
+	long int n;
+	for(int i = 1; i < ac; i++)
+	{
+		char *endptr;
+		n = std::strtol(av[i], &endptr, 10);
+		if(*endptr != '\0' || n < 0)
+			throw std::invalid_argument("Bad argument");
+		n.
+	}
+}
+
 
 PmergeMe::PmergeMe(PmergeMe const &src) {
 
