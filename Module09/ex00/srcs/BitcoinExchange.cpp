@@ -93,6 +93,6 @@ float BitcoinExchange::findClosestDate(const std::string& inputDate, float btc) 
             closestDate = it->first;
         }
     }
-	std::cout << closestDate << std::endl;
+	std::cout << closestDate << " => ";
     return _valueMap[closestDate] * btc;
 }
