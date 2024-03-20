@@ -1,9 +1,9 @@
 NAME = PmergeME
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = objs/
 
-SRC =	srcs/main.cpp 
+SRC =	srcs/main.cpp srcs/PmergeMe.cpp
 OBJ = $(addprefix $(OBJ_DIR), $(notdir $(SRC:.cpp=.o)))
 
 TOTAL_FILES := $(words $(SRC))

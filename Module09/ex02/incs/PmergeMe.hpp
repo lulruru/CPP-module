@@ -14,9 +14,10 @@
 
 #include <iostream>
 #include <string>
-#include "colors.hpp"
 #include <vector>
 #include <deque>
+#include <algorithm>
+#include <sys/time.h>
 
 class PmergeMe
 {
@@ -27,18 +28,23 @@ class PmergeMe
 	PmergeMe(int ac, char **av);
     PmergeMe(PmergeMe const &src);
     ~PmergeMe();
-
 	// Surcharge d'opérateurs
     PmergeMe& operator=(PmergeMe const &rhs);
 
-	// Getters & Setters
+	template <typename cont>
+	void DichotomieInsert(cont &container, int value);
 	
+	unsigned int	jacobsthal(unsigned int n);
+	template< typename T>
+	void print_container(const std::string &str,T &cont);
 	// Méthodes
-	
+	template<typename Container>
+	void sort_vector(Container& cont) ;
+	void sort_deque();
 	private:
 	std::vector<int> _argument;
 	std::vector<int> _vectorArg;
-	std::deque<int> _dequecont;
+	std::deque<int> _dequeArg;
 	
 };
 

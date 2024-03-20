@@ -16,10 +16,8 @@ int main(int ac, char **av) {
 
 	try{
 		if(ac < 2)
-			throw std::invalid_argument("./PmergeME <set of number>");
-		for(int i = 1; i < ac ; i++){
-			;
-		}
+			throw std::invalid_argument("./PmergeME <set of number>");	
+		PmergeMe a(ac, av);
 	}catch(std::exception &e){
 		std::cout << "Error : " << e.what() << std::endl;
  	}
